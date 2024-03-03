@@ -52,6 +52,16 @@
       grid-area: auto;
     }
   }
+
+  .bg-mountain {
+    background: url("/images/mountain.jpg") no-repeat;
+
+    @apply h-full w-full bg-cover object-cover;
+  }
+
+  .swiper-active {
+    @apply !bg-white !opacity-100;
+  }
 }
 
 @layer utilities {

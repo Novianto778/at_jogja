@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { FollowerPointerCard } from "./FollowingPointer";
 
 const TrendingDestination = () => {
   return (
@@ -13,7 +12,7 @@ const TrendingDestination = () => {
       </p>
       <div className="parent">
         <div className="div1 group relative">
-          <FollowerPointerCard className="w-full h-full">
+          <>
             <>
               <Image
                 src="/images/gunung-merapi.jpg"
@@ -30,11 +29,11 @@ const TrendingDestination = () => {
                 </p>
               </div>
             </>
-          </FollowerPointerCard>
+          </>
         </div>
 
         <div className="div2">
-          <FollowerPointerCard className="w-full h-full">
+          <>
             <>
               <Image
                 src="/images/prambanan.jpg"
@@ -51,10 +50,10 @@ const TrendingDestination = () => {
                 </p>
               </div>
             </>
-          </FollowerPointerCard>
+          </>
         </div>
         <div className="div3">
-          <FollowerPointerCard className="w-full h-full">
+          <>
             <>
               <Image
                 src="/images/malioboro.jpg"
@@ -71,11 +70,62 @@ const TrendingDestination = () => {
                 </p>
               </div>
             </>
-          </FollowerPointerCard>
+          </>
         </div>
-        <div className="div4"></div>
-        <div className="div5"></div>
-        <div className="div6"></div>
+        <div className="div4">
+          <>
+            <Image
+              src="/images/merapi.jpg"
+              alt="merapi"
+              width={300}
+              height={200}
+              className="rounded w-full h-full bg-cover object-cover"
+            />
+            <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-300 ease-in-out">
+              <h3 className="text-white text-lg font-bold">Gunung Merapi</h3>
+              <p className="text-white text-body">
+                The most active volcano in Indonesia, located in the center of
+                Java.
+              </p>
+            </div>
+          </>
+        </div>
+        <div className="div5">
+          <>
+            <Image
+              src="/images/pantai.jpg"
+              alt="pantai parangtritis"
+              width={600}
+              height={300}
+              className="rounded w-full h-full bg-cover object-cover"
+            />
+            <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-300 ease-in-out">
+              <h3 className="text-white text-lg font-bold">Gunung Merapi</h3>
+              <p className="text-white text-body">
+                The most active volcano in Indonesia, located in the center of
+                Java.
+              </p>
+            </div>
+          </>
+        </div>
+        <div className="div6">
+          <>
+            <Image
+              src="/images/waduk-sermo.jpg"
+              alt="waduk sermo"
+              width={600}
+              height={300}
+              className="rounded w-full h-full bg-cover object-cover"
+            />
+            <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-300 ease-in-out">
+              <h3 className="text-white text-lg font-bold">Gunung Merapi</h3>
+              <p className="text-white text-body">
+                The most active volcano in Indonesia, located in the center of
+                Java.
+              </p>
+            </div>
+          </>
+        </div>
       </div>
     </section>
   );

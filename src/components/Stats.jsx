@@ -32,7 +32,7 @@ const Stats = () => {
   });
 
   return (
-    <div className="grid grid-cols-3 justify-items-center py-20">
+    <section className="container grid grid-cols-1 md:grid-cols-3 gap-y-16 md:justify-items-center py-20">
       <div className="flex gap-4 items-center">
         <Image
           src="/icon/arrival.png"
@@ -78,7 +78,7 @@ const Stats = () => {
           <p className="text-body text-center">Cultures &amp; Heritages</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
