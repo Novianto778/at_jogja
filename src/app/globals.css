@@ -3,27 +3,55 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --color-primary: #5d9981;
+  --color-body: #838383;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .parent {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 80px);
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .div1 {
+    grid-area: 1 / 1 / 7 / 4;
+  }
+  .div2 {
+    grid-area: 1 / 4 / 5 / 9;
+  }
+  .div3 {
+    grid-area: 5 / 4 / 7 / 7;
+  }
+  .div4 {
+    grid-area: 5 / 7 / 7 / 9;
+  }
+  .div5 {
+    grid-area: 1 / 9 / 4 / 13;
+  }
+  .div6 {
+    grid-area: 4 / 9 / 7 / 13;
+  }
+
+  @media (max-width: 640px) {
+    .parent {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-column-gap: 16px;
+      grid-row-gap: 16px;
+    }
+
+    .div1,
+    .div2,
+    .div3,
+    .div4,
+    .div5,
+    .div6 {
+      grid-area: auto;
+    }
+  }
 }
 
 @layer utilities {
