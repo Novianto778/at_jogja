@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,10 +24,10 @@
     grid-area: 1 / 4 / 5 / 9;
   }
   .div3 {
-    grid-area: 5 / 4 / 7 / 7;
+    grid-area: 5 / 4 / 7 / 6;
   }
   .div4 {
-    grid-area: 5 / 7 / 7 / 9;
+    grid-area: 5 / 6 / 7 / 9;
   }
   .div5 {
     grid-area: 1 / 9 / 4 / 13;
@@ -35,7 +36,7 @@
     grid-area: 4 / 9 / 7 / 13;
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 840px) {
     .parent {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(3, 1fr);

@@ -8,8 +8,9 @@ import { cn } from "@/utils/lib";
 
 export const FollowerPointerCard = ({ children, className, title }) => {
   const ref = useRef(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
+  // const x = useMotionValue(0);
+  // const y = useMotionValue(0);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
 
   const [rect, setRect] = useState(null);
   const [isInside, setIsInside] = useState(false); // Add this line
@@ -39,8 +40,12 @@ export const FollowerPointerCard = ({ children, className, title }) => {
       const scrollX = window.scrollX;
       const scrollY = window.scrollY;
 
-      x.set(e.clientX - rect.left + scrollX);
-      y.set(e.clientY - rect.top + scrollY);
+      // x.set(e.clientX - rect.left + scrollX);
+      // y.set(e.clientY - rect.top + scrollY);
+      setPosition({
+        x: e.clientX,
+        y: e.clientY,
+      });
     }
   };
   const handleMouseLeave = () => {
@@ -62,7 +67,7 @@ export const FollowerPointerCard = ({ children, className, title }) => {
       className={cn("relative", className)}
     >
       <AnimatePresence mode="wait">
-        {isInside && <FollowPointer x={x} y={y} title={title} />}
+        {isInside && <FollowPointer x={position.x} y={position.y} />}
       </AnimatePresence>
       {children}
     </div>
@@ -74,8 +79,8 @@ export const FollowPointer = ({ x, y }) => {
     <motion.div
       className="rounded-full absolute z-50 p-4 bg-white"
       style={{
-        top: y,
-        left: x,
+        top: y - 80,
+        left: x - 80,
         pointerEvents: "none",
       }}
       initial={{

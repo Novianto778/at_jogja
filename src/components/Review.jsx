@@ -11,7 +11,7 @@ const Review = (props) => {
   const navigationRef = useRef(null);
 
   return (
-    <section className="relative h-screen w-screen max-w-full md:h-[80vh] my-10">
+    <section className="relative h-screen w-screen max-w-full md:h-[80vh]">
       {/* overlay */}
       <div className="absolute w-full h-full bg-black bg-opacity-30 z-0" />
 
@@ -19,10 +19,10 @@ const Review = (props) => {
         <div className="container relative z-10 grid min-h-[60%] w-[90%] grid-cols-12 gap-y-8 overflow rounded-lg p-12">
           <Image
             src={"/icon/quote.png"}
-            width={200}
-            height={200}
+            width={160}
+            height={160}
             alt="quote icon"
-            className="absolute -bottom-16 left-10 -z-10 md:block hidden"
+            className="absolute -bottom-4 left-10 -z-10 md:block hidden"
           />
           <div className="relative col-span-12 md:col-span-6">
             <p className="text-lg font-medium uppercase text-white">

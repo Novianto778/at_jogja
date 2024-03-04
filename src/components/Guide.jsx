@@ -1,12 +1,31 @@
 "use client";
 import { Check, Flag, LocateIcon, MapIcon, MapPin, Search } from "lucide-react";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import ReactSelect from "react-select";
 import DestinationSelect from "./DestinationSelect";
 import Button from "./Button";
+import TourTypeSelect from "./TourTypeSelect";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const Guide = (props) => {
+  const [searchValue, setSearchValue] = useState({
+    destination: "",
+    tourType: "",
+  });
+  const router = useRouter();
+
+  const handleFind = () => {
+    if (searchValue.destination === "" || searchValue.tourType === "") {
+      toast.error("Please fill in the destination and tour type");
+      return;
+    }
+    router.push(
+      `/guide?destination=${searchValue.destination}&tourType=${searchValue.tourType}`
+    );
+  };
+
   return (
     <section className="container py-20">
       <div className="grid grid-cols-12 gap-y-4 md:gap-8 items-center max-h-screen">
@@ -25,7 +44,12 @@ const Guide = (props) => {
               </div>
               <div className="flex flex-col">
                 <h3 className="font-bold">Where</h3>
-                <DestinationSelect />
+                <DestinationSelect
+                  value={searchValue.destination}
+                  onChange={(value) =>
+                    setSearchValue({ ...searchValue, destination: value })
+                  }
+                />
               </div>
             </div>
             <div className="flex items-center gap-2">
@@ -34,10 +58,18 @@ const Guide = (props) => {
               </div>
               <div className="flex flex-col">
                 <h3 className="font-bold">Tour Types</h3>
-                <DestinationSelect />
+                <TourTypeSelect
+                  value={searchValue.tourType}
+                  onChange={(value) =>
+                    setSearchValue({ ...searchValue, tourType: value })
+                  }
+                />
               </div>
             </div>
-            <Button className="bg-primary gap-2 hidden items-center justify-center text-white rounded-full md:flex">
+            <Button
+              onClick={handleFind}
+              className="bg-primary gap-2 hidden items-center justify-center text-white rounded-full md:flex"
+            >
               <Search size={20} className="text-white" /> Find
             </Button>
           </div>

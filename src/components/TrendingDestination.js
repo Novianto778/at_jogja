@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { FollowerPointerCard } from "./FollowingPointer";
 
 const TrendingDestination = () => {
   return (
@@ -14,14 +16,16 @@ const TrendingDestination = () => {
         <div className="div1 group relative">
           <>
             <>
+              <div className="absolute w-full h-full bg-black bg-opacity-30 z-0" />
+
               <Image
                 src="/images/gunung-merapi.jpg"
                 alt="Borobudur"
-                width={300}
+                width={600}
                 height={800}
                 className="rounded w-full h-full bg-cover object-cover"
               />
-              <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-300 ease-in-out">
+              <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-600 ease-in-out">
                 <h3 className="text-white text-lg font-bold">Gunung Merapi</h3>
                 <p className="text-white text-body">
                   The most active volcano in Indonesia, located in the center of
@@ -32,9 +36,11 @@ const TrendingDestination = () => {
           </>
         </div>
 
-        <div className="div2">
+        <div className="div2 group relative">
           <>
             <>
+              {/* overlay */}
+              <div className="absolute w-full h-full bg-black bg-opacity-30 z-0" />
               <Image
                 src="/images/prambanan.jpg"
                 alt="Borobudur"
@@ -42,86 +48,95 @@ const TrendingDestination = () => {
                 height={400}
                 className="rounded w-full h-full bg-cover object-cover"
               />
-              <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-300 ease-in-out">
-                <h3 className="text-white text-lg font-bold">Gunung Merapi</h3>
+              <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-600 ease-in-out">
+                <h3 className="text-white text-lg font-bold">
+                  Candi Prambanan
+                </h3>
                 <p className="text-white text-body">
-                  The most active volcano in Indonesia, located in the center of
-                  Java.
+                  The largest Hindu temple in Indonesia
                 </p>
               </div>
             </>
           </>
         </div>
-        <div className="div3">
+        <div className="div3 group relative">
           <>
             <>
+              <div className="absolute w-full h-full bg-black bg-opacity-30 z-0" />
+
               <Image
                 src="/images/malioboro.jpg"
                 alt="Borobudur"
-                width={300}
-                height={200}
+                width={600}
+                height={400}
                 className="rounded w-full h-full bg-cover object-cover"
               />
-              <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-300 ease-in-out">
-                <h3 className="text-white text-lg font-bold">Gunung Merapi</h3>
+              <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-600 ease-in-out z-50">
+                <h3 className="text-white text-lg font-bold">
+                  Jalan Malioboro
+                </h3>
                 <p className="text-white text-body">
-                  The most active volcano in Indonesia, located in the center of
-                  Java.
+                  The most famous street in Yogyakarta
                 </p>
               </div>
             </>
           </>
         </div>
-        <div className="div4">
+        <div className="div4 group relative">
           <>
+            <div className="absolute w-full h-full bg-black bg-opacity-30 z-0" />
+
             <Image
-              src="/images/merapi.jpg"
+              src="/images/taman-sari.jpg"
               alt="merapi"
-              width={300}
-              height={200}
+              width={600}
+              height={400}
               className="rounded w-full h-full bg-cover object-cover"
             />
-            <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-300 ease-in-out">
-              <h3 className="text-white text-lg font-bold">Gunung Merapi</h3>
+            <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-600 ease-in-out">
+              <h3 className="text-white text-lg font-bold">Taman Sari</h3>
               <p className="text-white text-body">
-                The most active volcano in Indonesia, located in the center of
-                Java.
+                The site of a former royal garden of the Sultanate of Yogyakarta
               </p>
             </div>
           </>
         </div>
-        <div className="div5">
+        <div className="div5 group relative">
           <>
+            <div className="absolute w-full h-full bg-black bg-opacity-30 z-0" />
+
             <Image
               src="/images/pantai.jpg"
               alt="pantai parangtritis"
               width={600}
-              height={300}
+              height={600}
               className="rounded w-full h-full bg-cover object-cover"
             />
-            <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-300 ease-in-out">
-              <h3 className="text-white text-lg font-bold">Gunung Merapi</h3>
+            <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-600 ease-in-out">
+              <h3 className="text-white text-lg font-bold">
+                Pantai Parangtritis
+              </h3>
               <p className="text-white text-body">
-                The most active volcano in Indonesia, located in the center of
-                Java.
+                The most famous beach in Yogyakarta, located in Bantul Regency.
               </p>
             </div>
           </>
         </div>
-        <div className="div6">
+        <div className="div6 group relative">
           <>
+            <div className="absolute w-full h-full bg-black bg-opacity-30 z-0" />
+
             <Image
               src="/images/waduk-sermo.jpg"
               alt="waduk sermo"
               width={600}
-              height={300}
+              height={600}
               className="rounded w-full h-full bg-cover object-cover"
             />
-            <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-300 ease-in-out">
-              <h3 className="text-white text-lg font-bold">Gunung Merapi</h3>
+            <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-600 ease-in-out">
+              <h3 className="text-white text-lg font-bold">Waduk Sermo</h3>
               <p className="text-white text-body">
-                The most active volcano in Indonesia, located in the center of
-                Java.
+                Place to relax and enjoy the beauty of nature.
               </p>
             </div>
           </>

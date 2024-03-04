@@ -8,64 +8,100 @@ import {
   SelectValue,
 } from "@/components/Select";
 
-const DestinationSelect = () => {
+const DestinationSelect = ({ value, onChange }) => {
+  const bantul = [
+    "Parangtritis Beach",
+    "Kalibiru National Park",
+    "Pantai Baron",
+    "Pantai Kukup",
+    "Pantai Indrayanti",
+    "Grojogan Sewu Waterfall",
+  ];
+
+  const sleman = [
+    "Prambanan Temple",
+    "Merapi Volcano",
+    "Ullen Sentalu Museum",
+    "Kaliurang",
+    "Museum Merapi",
+    "Kraton Ngayogyakarta Hadiningrat",
+  ];
+
+  const kulonprogo = [
+    "Punthuk Setumbu",
+    "Kedung Pedut Waterfall",
+    "Puncak Kebun Buah Mangunan",
+    "Pantai Glagah",
+    "Pantai Drini",
+  ];
+
+  const yogyakarta = [
+    "Taman Sari",
+    "Malioboro",
+    "Prambanan Temple",
+    "Merapi Volcano",
+    "Kotagede",
+  ];
+
   return (
-    <Select>
-      <SelectTrigger className="w-[150px] text-sm border-0">
-        <SelectValue placeholder="Select tour types" />
+    <Select defaultValue={value} onValueChange={onChange}>
+      <SelectTrigger className="w-[160px] text-sm border-0">
+        <SelectValue placeholder="Select destination" />
       </SelectTrigger>
       <SelectContent className="bg-white">
         <SelectGroup>
-          <SelectLabel>North America</SelectLabel>
-          <SelectItem value="est">Eastern Standard Time (EST)</SelectItem>
-          <SelectItem value="cst">Central Standard Time (CST)</SelectItem>
-          <SelectItem value="mst">Mountain Standard Time (MST)</SelectItem>
-          <SelectItem value="pst">Pacific Standard Time (PST)</SelectItem>
-          <SelectItem value="akst">Alaska Standard Time (AKST)</SelectItem>
-          <SelectItem value="hst">Hawaii Standard Time (HST)</SelectItem>
+          <SelectLabel>Bantul Regency</SelectLabel>
+          {/* All */}
+          <SelectItem value="all-bantul">All Bantul</SelectItem>
+          {bantul.map((destination, index) => (
+            <SelectItem
+              key={index}
+              value={destination.toLowerCase().split(" ").join("-")}
+            >
+              {destination}
+            </SelectItem>
+          ))}
         </SelectGroup>
         <SelectGroup>
-          <SelectLabel>Europe & Africa</SelectLabel>
-          <SelectItem value="gmt">Greenwich Mean Time (GMT)</SelectItem>
-          <SelectItem value="cet">Central European Time (CET)</SelectItem>
-          <SelectItem value="eet">Eastern European Time (EET)</SelectItem>
-          <SelectItem value="west">
-            Western European Summer Time (WEST)
-          </SelectItem>
-          <SelectItem value="cat">Central Africa Time (CAT)</SelectItem>
-          <SelectItem value="eat">East Africa Time (EAT)</SelectItem>
+          <SelectLabel>Sleman Regency</SelectLabel>
+          {/* All */}
+          <SelectItem value="all-sleman">All Sleman</SelectItem>
+          {sleman.map((destination, index) => (
+            <SelectItem
+              key={index}
+              value={destination.toLowerCase().split(" ").join("-")}
+            >
+              {destination}
+            </SelectItem>
+          ))}
         </SelectGroup>
+
         <SelectGroup>
-          <SelectLabel>Asia</SelectLabel>
-          <SelectItem value="msk">Moscow Time (MSK)</SelectItem>
-          <SelectItem value="ist">India Standard Time (IST)</SelectItem>
-          <SelectItem value="cst_china">China Standard Time (CST)</SelectItem>
-          <SelectItem value="jst">Japan Standard Time (JST)</SelectItem>
-          <SelectItem value="kst">Korea Standard Time (KST)</SelectItem>
-          <SelectItem value="ist_indonesia">
-            Indonesia Central Standard Time (WITA)
-          </SelectItem>
+          <SelectLabel>Kulon Progo Regency</SelectLabel>
+          {/* All */}
+          <SelectItem value="all-kulon-progo">All Kulon Progo</SelectItem>
+          {kulonprogo.map((destination, index) => (
+            <SelectItem
+              key={index}
+              value={destination.toLowerCase().split(" ").join("-")}
+            >
+              {destination}
+            </SelectItem>
+          ))}
         </SelectGroup>
+
         <SelectGroup>
-          <SelectLabel>Australia & Pacific</SelectLabel>
-          <SelectItem value="awst">
-            Australian Western Standard Time (AWST)
-          </SelectItem>
-          <SelectItem value="acst">
-            Australian Central Standard Time (ACST)
-          </SelectItem>
-          <SelectItem value="aest">
-            Australian Eastern Standard Time (AEST)
-          </SelectItem>
-          <SelectItem value="nzst">New Zealand Standard Time (NZST)</SelectItem>
-          <SelectItem value="fjt">Fiji Time (FJT)</SelectItem>
-        </SelectGroup>
-        <SelectGroup>
-          <SelectLabel>South America</SelectLabel>
-          <SelectItem value="art">Argentina Time (ART)</SelectItem>
-          <SelectItem value="bot">Bolivia Time (BOT)</SelectItem>
-          <SelectItem value="brt">Brasilia Time (BRT)</SelectItem>
-          <SelectItem value="clt">Chile Standard Time (CLT)</SelectItem>
+          <SelectLabel>Yogyakarta Regency</SelectLabel>
+          {/* All */}
+          <SelectItem value="all-yogyakarta">All Yogyakarta</SelectItem>
+          {yogyakarta.map((destination, index) => (
+            <SelectItem
+              key={index}
+              value={destination.toLowerCase().split(" ").join("-")}
+            >
+              {destination}
+            </SelectItem>
+          ))}
         </SelectGroup>
       </SelectContent>
     </Select>

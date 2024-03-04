@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Button from "./Button";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 const WhereToStart = () => {
   return (
@@ -31,13 +32,15 @@ const WhereToStart = () => {
                 food to fine dining.
               </p>
             </div>
-            <Button className="bg-white gap-2 flex items-center justify-center text-primary rounded group">
-              Explore{" "}
-              <ArrowUpRight
-                size={16}
-                className="text-primary group-hover:rotate-45 group-hover:ml-4 duration-300"
-              />
-            </Button>
+            <Link href="/culinary">
+              <Button className="bg-white gap-2 flex items-center justify-center text-primary rounded group">
+                Explore{" "}
+                <ArrowUpRight
+                  size={16}
+                  className="text-primary group-hover:rotate-45 group-hover:ml-4 duration-300"
+                />
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="relative w-full h-full rounded-lg overflow-hidden min-h-[400px]">

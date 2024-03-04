@@ -14,8 +14,6 @@ export default function ModalVideo({ className }) {
       <button
         className="flex justify-center items-center focus:outline-none focus-visible:ring focus-visible:ring-indigo-300 rounded-3xl group cursor-pointer"
         onClick={() => {
-          console.log("clicked");
-
           setModalOpen(true);
         }}
         aria-label="Watch the video"
@@ -72,12 +70,11 @@ export default function ModalVideo({ className }) {
             leaveTo="opacity-0 scale-75"
           >
             <div className="max-w-5xl mx-auto h-full flex items-center">
-              <Dialog.Panel className="w-[90vw] max-h-full rounded-3xl shadow-2xl aspect-video bg-black overflow-hidden relative pt-[56.25%]">
+              <Dialog.Panel className="w-[80vw] md:w-[90vw] max-h-full rounded-3xl shadow-2xl aspect-video bg-black overflow-hidden relative pt-[56.25%]">
                 <iframe
                   className="absolute inset-0 w-full h-full rounded-3xl"
                   src="https://www.youtube.com/embed/1V_4-f5Ocy4?si=ABZTiTDaigqSI6sT&amp;"
-                  title="YouTube video player"
-                  frameborder="0"
+                  title="Wonderful Yogyakarta"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen
                 ></iframe>
