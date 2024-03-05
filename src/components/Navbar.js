@@ -1,14 +1,14 @@
 "use client";
-import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
+import useDevice from "@/hooks/useDevice";
 import { cn } from "@/utils/lib";
-import { useMediaQuery } from "@uidotdev/usehooks";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Navbar = ({ primary }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const [isSticky, setSticky] = useState(false);
-  const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
+  const { isMediumDevice } = useDevice();
   const handleScroll = () => {
     if (window.scrollY > 100) {
       setSticky(true);
@@ -18,10 +18,10 @@ const Navbar = ({ primary }) => {
   };
 
   useEffect(() => {
-    if (!isSmallDevice) {
+    if (!isMediumDevice) {
       setOpenMenu(false);
     }
-  }, [isSmallDevice]);
+  }, [isMediumDevice]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
