@@ -1,9 +1,11 @@
 "use client";
-import useDevice from "@/hooks/useDevice";
 import { cn } from "@/utils/lib";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+
+const useDevice = dynamic(() => import("@/hooks/useDevice"));
 
 const Navbar = ({ primary }) => {
   const [openMenu, setOpenMenu] = useState(false);
