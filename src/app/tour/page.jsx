@@ -8,14 +8,15 @@ import "swiper/css/autoplay";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./style.css";
+import Button from "@/components/Button";
 
 const TourDetail = () => {
   return (
-    <div className="container">
-      <Link href="/" className="flex items-center gap-4 mt-4">
+    <div className="!container">
+      <a href="/" className="flex items-center gap-4 mt-4">
         <ArrowLeft />
         <span>Back</span>
-      </Link>
+      </a>
       <div className="">
         <div className="tour-head">
           <div className="tour-head-left">
@@ -357,13 +358,21 @@ const TourDetail = () => {
                   </div>
                 </div>
               </div>
-              <div className="tour-receipt-button">
+              <div className="tour-receipt-button !gap-2 !items-center">
                 <button className="tour-favorite">
                   <span className="material-icons-outlined">
                     favorite_border
                   </span>
                 </button>
-                <button className="tour-reserve">Book Now</button>
+                <Link
+                  className="flex-1"
+                  target="_blank"
+                  href={
+                    "https://wa.me/62812345678?text=I%20want%20to%20book%20the%20tour%20Heritage%20%26%20Nature%20Discovery%20Trips%20on%2007%20May%20-%2016%20May%20for%203%20guests"
+                  }
+                >
+                  <Button className={"w-full rounded-full"}>Book Now</Button>
+                </Link>
               </div>
             </div>
           </div>

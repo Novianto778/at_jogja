@@ -1,13 +1,12 @@
 "use client";
-import { Check, Flag, LocateIcon, MapIcon, MapPin, Search } from "lucide-react";
+import { Check, Flag, MapPin, Search } from "lucide-react";
 import Image from "next/image";
-import React, { useState } from "react";
-import ReactSelect from "react-select";
-import DestinationSelect from "./DestinationSelect";
-import Button from "./Button";
-import TourTypeSelect from "./TourTypeSelect";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import toast from "react-hot-toast";
+import Button from "./Button";
+import DestinationSelect from "./DestinationSelect";
+import TourTypeSelect from "./TourTypeSelect";
 
 const Guide = (props) => {
   const [searchValue, setSearchValue] = useState({
@@ -27,7 +26,7 @@ const Guide = (props) => {
   };
 
   return (
-    <section className="container py-20">
+    <section className="container py-20" id="guide">
       <div className="grid grid-cols-12 gap-y-4 md:gap-8 items-center max-h-screen">
         <div className="col-span-12 lg:col-span-7">
           <h2 className="text-3xl font-bold font-playfairDisplay mb-2">

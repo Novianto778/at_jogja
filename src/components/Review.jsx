@@ -29,14 +29,7 @@ const Review = (props) => {
               Testimonial
             </p>
             <h6 className="max-w-[420px] text-white font-bold font-outfit text-5xl tracking-wide">
-              Pendapat tentang{" "}
-              <Image
-                src="/logo.svg"
-                width={200}
-                height={200}
-                alt="CraftConnect"
-                className="inline"
-              />
+              What Our Users Say
             </h6>
             <div
               className="swiper-pg mt-2 inline-flex gap-x-2 text-left"

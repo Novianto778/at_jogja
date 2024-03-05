@@ -9,9 +9,9 @@ const Hero = () => {
 
       <div className="h-screen text-white grid bg-cover bg-hero">
         <div className="col-start-1 row-start-1 bg-black bg-opacity-70 w-full h-full"></div>
-        <div className="col-start-1 row-start-1 container">
+        <div className="col-start-1 row-start-1">
           <Navbar />
-          <div className="grid h-[calc(100vh-80px)] grid-cols-5 justify-center items-center">
+          <div className="grid h-[calc(100vh-80px)] grid-cols-5 justify-center items-center container">
             <div className="text-white flex flex-col gap-4 col-span-5 lg:col-span-3">
               <div className="flex flex-col gap-6">
                 <h1 className="text-heading font-playfairDisplay font-bold leading-snug">

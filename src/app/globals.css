@@ -8,6 +8,10 @@
   --color-body: #838383;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer components {
   .parent {
     display: grid;

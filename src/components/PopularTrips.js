@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const PopularTrips = () => {
   return (
-    <section className="container py-10">
+    <section className="container py-10" id="trips">
       <h2 className="text-3xl font-bold font-playfairDisplay mb-2">
         Popular Trips
       </h2>

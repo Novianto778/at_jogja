@@ -1,11 +1,44 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { cn } from "@/utils/lib";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 const Navbar = ({ primary }) => {
+  const [openMenu, setOpenMenu] = useState(false);
+  const [isSticky, setSticky] = useState(false);
+  const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
+  const handleScroll = () => {
+    if (window.scrollY > 100) {
+      setSticky(true);
+    } else {
+      setSticky(false);
+    }
+  };
+
+  useEffect(() => {
+    if (!isSmallDevice) {
+      setOpenMenu(false);
+    }
+  }, [isSmallDevice]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", () => handleScroll);
+    };
+  }, []);
   return (
-    <nav className={primary ? "bg-primary" : "bg-transparent"}>
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav
+      className={cn(
+        "",
+        primary ? "bg-primary" : "bg-transparent",
+
+        isSticky ? "fixed top-0 z-50 bg-primary w-full" : ""
+      )}
+    >
+      <div className="max-w-screen-xl container flex flex-wrap items-center justify-between mx-auto p-4">
         <Link
           href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
@@ -19,6 +52,7 @@ const Navbar = ({ primary }) => {
           />
         </Link>
         <button
+          onClick={() => setOpenMenu(!openMenu)}
           data-collapse-toggle="navbar-default"
           type="button"
           className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-primary focus:outline-none focus:ring-2 focus:ring-gray-200 "
@@ -35,55 +69,77 @@ const Navbar = ({ primary }) => {
           >
             <path
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M1 1h15M1 7h15M1 13h15"
             />
           </svg>
         </button>
-        <div className="hidden w-full md:block md:w-auto" id="navbar-default">
+        <div
+          className={cn(
+            "hidden w-full md:block md:w-auto",
+            openMenu ? "block" : "hidden"
+          )}
+          id="navbar-default"
+        >
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-transparent">
             <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-whiterounded md:bg-transparent md:p-0"
+              <Link
+                href="/"
+                className={cn(
+                  "block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-black md:hover:font-bold md:p-0",
+                  openMenu ? "text-black" : "text-white"
+                )}
                 aria-current="page"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-black md:hover:font-bold md:p-0"
+              <Link
+                href="#trips"
+                className={cn(
+                  "block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-black md:hover:font-bold md:p-0",
+                  //
+                  openMenu ? "text-black" : "text-white"
+                )}
               >
-                About
-              </a>
+                Trips
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-black md:hover:font-bold md:p-0"
+              <Link
+                href="#destination"
+                className={cn(
+                  "block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-black md:hover:font-bold md:p-0",
+                  openMenu ? "text-black" : "text-white"
+                )}
               >
-                Services
-              </a>
+                Destination
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-black md:hover:font-bold md:p-0"
+              <Link
+                href="#guide"
+                className={cn(
+                  "block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-black md:hover:font-bold md:p-0",
+                  openMenu ? "text-black" : "text-white"
+                )}
               >
-                Pricing
-              </a>
+                Guide
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-black md:hover:font-bold md:p-0"
+              <Link
+                href="#stories"
+                className={cn(
+                  "block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-black md:hover:font-bold md:p-0",
+                  openMenu ? "text-black" : "text-white"
+                )}
               >
-                Contact
-              </a>
+                Stories
+              </Link>
             </li>
           </ul>
         </div>

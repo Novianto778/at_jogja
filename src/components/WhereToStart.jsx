@@ -22,7 +22,7 @@ const WhereToStart = () => {
             alt="kuliner"
             className="rounded w-full h-full object-cover bg-cover"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-20 flex flex-col items-start justify-end gap-8 p-12">
+          <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col items-start justify-end gap-8 p-12">
             <div>
               <h3 className="text-white text-xl font-bold">
                 Best Yogyakarta's Culinary Selection
@@ -50,7 +50,7 @@ const WhereToStart = () => {
             alt="wayang"
             className="rounded w-full h-full object-cover bg-cover"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-20 flex flex-col items-start justify-end gap-8 p-12">
+          <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col items-start justify-end gap-8 p-12">
             <div>
               <h3 className="text-white text-xl font-bold">
                 Experience Yogyakarta's Vibrant Events
@@ -60,13 +60,15 @@ const WhereToStart = () => {
                 its lively events and festivals
               </p>
             </div>
-            <Button className="bg-white gap-2 flex items-center justify-center text-primary rounded group">
-              Explore{" "}
-              <ArrowUpRight
-                size={16}
-                className="text-primary group-hover:rotate-45 group-hover:ml-4 duration-300"
-              />
-            </Button>
+            <Link href="/event">
+              <Button className="bg-white gap-2 flex items-center justify-center text-primary rounded group">
+                Explore{" "}
+                <ArrowUpRight
+                  size={16}
+                  className="text-primary group-hover:rotate-45 group-hover:ml-4 duration-300"
+                />
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="relative w-full h-full rounded-lg overflow-hidden min-h-[400px]">
@@ -76,7 +78,7 @@ const WhereToStart = () => {
             alt="attraction"
             className="rounded w-full h-full object-cover bg-cover"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-20 flex flex-col items-start justify-end gap-8 p-12">
+          <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col items-start justify-end gap-8 p-12">
             <div>
               <h3 className="text-white text-xl font-bold">
                 Explore Yogyakarta's Must-See Attractions

@@ -4,7 +4,7 @@ import { FollowerPointerCard } from "./FollowingPointer";
 
 const TrendingDestination = () => {
   return (
-    <section className="container py-10">
+    <section className="container py-10" id="destination">
       <h2 className="text-3xl font-bold font-playfairDisplay mb-2">
         Trending Destinations
       </h2>
@@ -14,29 +14,24 @@ const TrendingDestination = () => {
       </p>
       <div className="parent">
         <div className="div1 group relative">
-          <>
-            <>
-              <div className="absolute w-full h-full bg-black bg-opacity-30 z-0" />
-
-              <Image
-                src="/images/gunung-merapi.jpg"
-                alt="Borobudur"
-                width={600}
-                height={800}
-                className="rounded w-full h-full bg-cover object-cover"
-              />
-              <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-600 ease-in-out">
-                <h3 className="text-white text-lg font-bold">Gunung Merapi</h3>
-                <p className="text-white text-body">
-                  The most active volcano in Indonesia, located in the center of
-                  Java.
-                </p>
-              </div>
-            </>
-          </>
+          <div className="absolute w-full h-full bg-black bg-opacity-30 z-0" />
+          <Image
+            src="/images/gunung-merapi.jpg"
+            alt="Borobudur"
+            width={600}
+            height={800}
+            className="rounded w-full h-full bg-cover object-cover"
+          />
+          <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-500 ease-in-out">
+            <h3 className="text-white text-lg font-bold">Gunung Merapi</h3>
+            <p className="text-white text-body hidden md:block">
+              The most active volcano in Indonesia, located in the center of
+              Java.
+            </p>
+          </div>
         </div>
 
-        <div className="div2 group relative">
+        <div className="div2 group relative duration-500">
           <>
             <>
               {/* overlay */}
@@ -48,18 +43,18 @@ const TrendingDestination = () => {
                 height={400}
                 className="rounded w-full h-full bg-cover object-cover"
               />
-              <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-600 ease-in-out">
+              <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-500 ease-in-out">
                 <h3 className="text-white text-lg font-bold">
                   Candi Prambanan
                 </h3>
-                <p className="text-white text-body">
+                <p className="text-white text-body hidden md:block">
                   The largest Hindu temple in Indonesia
                 </p>
               </div>
             </>
           </>
         </div>
-        <div className="div3 group relative">
+        <div className="div3 group relative duration-500">
           <>
             <>
               <div className="absolute w-full h-full bg-black bg-opacity-30 z-0" />
@@ -71,18 +66,18 @@ const TrendingDestination = () => {
                 height={400}
                 className="rounded w-full h-full bg-cover object-cover"
               />
-              <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-600 ease-in-out z-50">
+              <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-500 ease-in-out z-50">
                 <h3 className="text-white text-lg font-bold">
                   Jalan Malioboro
                 </h3>
-                <p className="text-white text-body">
+                <p className="text-white text-body hidden md:block">
                   The most famous street in Yogyakarta
                 </p>
               </div>
             </>
           </>
         </div>
-        <div className="div4 group relative">
+        <div className="div4 group relative duration-500">
           <>
             <div className="absolute w-full h-full bg-black bg-opacity-30 z-0" />
 
@@ -93,15 +88,15 @@ const TrendingDestination = () => {
               height={400}
               className="rounded w-full h-full bg-cover object-cover"
             />
-            <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-600 ease-in-out">
+            <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-500 ease-in-out">
               <h3 className="text-white text-lg font-bold">Taman Sari</h3>
-              <p className="text-white text-body">
+              <p className="text-white text-body hidden md:block">
                 The site of a former royal garden of the Sultanate of Yogyakarta
               </p>
             </div>
           </>
         </div>
-        <div className="div5 group relative">
+        <div className="div5 group relative duration-500">
           <>
             <div className="absolute w-full h-full bg-black bg-opacity-30 z-0" />
 
@@ -112,17 +107,17 @@ const TrendingDestination = () => {
               height={600}
               className="rounded w-full h-full bg-cover object-cover"
             />
-            <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-600 ease-in-out">
+            <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-500 ease-in-out">
               <h3 className="text-white text-lg font-bold">
                 Pantai Parangtritis
               </h3>
-              <p className="text-white text-body">
+              <p className="text-white text-body hidden md:block">
                 The most famous beach in Yogyakarta, located in Bantul Regency.
               </p>
             </div>
           </>
         </div>
-        <div className="div6 group relative">
+        <div className="div6 group relative duration-500">
           <>
             <div className="absolute w-full h-full bg-black bg-opacity-30 z-0" />
 
@@ -133,9 +128,9 @@ const TrendingDestination = () => {
               height={600}
               className="rounded w-full h-full bg-cover object-cover"
             />
-            <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-600 ease-in-out">
+            <div className="absolute inset-0 opacity-0 flex flex-col items-start justify-end p-4 group-hover:opacity-100 duration-500 ease-in-out">
               <h3 className="text-white text-lg font-bold">Waduk Sermo</h3>
-              <p className="text-white text-body">
+              <p className="text-white text-body hidden md:block">
                 Place to relax and enjoy the beauty of nature.
               </p>
             </div>

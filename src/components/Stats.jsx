@@ -4,7 +4,7 @@ import CountUp, { useCountUp } from "react-countup";
 
 const Stats = () => {
   useCountUp({
-    ref: "destination",
+    ref: "destinations",
     start: 0,
     end: 100,
     enableScrollSpy: true,
@@ -43,7 +43,7 @@ const Stats = () => {
         />
         <div className="flex flex-col gap-2">
           <h3 className="text-2xl font-bold">
-            <span id="destination"></span>+
+            <span id="destinations"></span>+
           </h3>
           <p className="text-body text-center">Destinations</p>
         </div>
