@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Button from "./Button";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -22,9 +23,11 @@ const Hero = () => {
                   experiences that Yogyakarta has to offer.
                 </p>
               </div>
-              <Button className="bg-primary text-white w-40 h-12 rounded-lg mt-10">
-                Explore Now
-              </Button>
+              <Link href="#start">
+                <Button className="bg-primary text-white w-40 h-12 rounded-lg mt-10">
+                  Explore Now
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

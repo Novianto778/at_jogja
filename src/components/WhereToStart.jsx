@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const WhereToStart = () => {
   return (
-    <section className="container py-20">
+    <section className="container py-20" id="start">
       <h2 className="text-3xl font-bold font-playfairDisplay mb-2">
         Doesn't know where to start?
       </h2>
