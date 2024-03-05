@@ -6,7 +6,7 @@ import TourTypeSelect from "@/components/TourTypeSelect";
 import { Flag, MapPin, Search, Star } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 
 const Tour = () => {
   const CARDS = [<Card1 key={1} />, <Card2 key={2} />, <Card3 key={3} />];
@@ -18,13 +18,12 @@ const Tour = () => {
 
   const handleSearch = () => {
     // randomize the cards
-    console.log("searching");
 
     setCards(CARDS.sort(() => Math.random() - 0.5));
   };
 
   return (
-    <main>
+    <Suspense>
       <Navbar primary />
       <div className="container my-10">
         <h1 className="text-4xl font-bold text-center font-playfairDisplay">
@@ -67,7 +66,7 @@ const Tour = () => {
           {cards.map((card) => card)}
         </div>
       </div>
-    </main>
+    </Suspense>
   );
 };
 
